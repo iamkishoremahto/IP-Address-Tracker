@@ -4,7 +4,7 @@ var map = L.map('map')
 
 var myIcon = L.icon({
     iconUrl: 'images/icon-location.svg',
-    iconSize:[38, 55],
+    iconSize:[45, 55],
 })
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -18,7 +18,7 @@ var marker;
 const getIpInfo = async (ip_address = '192.212.174.101') => {
     const APIKey = 'at_LJRNbaX3nQwN124gwI8sdc11DCVvV'
 
-    // const URL = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${APIKey}=${ip_address}`
+
 
     const URL = `https://geo.ipify.org/api/v2/country,city?apiKey=${APIKey}&ipAddress=${ip_address}`
 
