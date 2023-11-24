@@ -59,14 +59,18 @@
 .ip_input .ip_inputWrapper .show_resultBox {
   position: absolute;
   width: 90%;
-  height: 200px;
+  height: auto;
+  overflow: hidden;
   top: 140%;
-  background-color: white;
-  border-radius: 15px;
-  padding: 30px;
+  border-radius: 35px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  z-index: 3;
+}
+.ip_input .ip_inputWrapper .show_resultBox .row {
+  background-color: white;
+  padding: 30px;
+  height: 100%;
 }
 .ip_input .ip_inputWrapper .show_resultBox .col {
   display: flex;
@@ -92,5 +96,25 @@
 
 #map {
   height: calc(100vh - 300px);
-  z-index: -1;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .show_resultBox .col p:first-child {
+    font-size: 0.6rem !important;
+  }
+  .show_resultBox .col p:last-child {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .show_resultBox {
+    flex-direction: row !important;
+  }
+  .show_resultBox .col {
+    border: none !important;
+  }
+  .inputGroup input {
+    width: 305px !important;
+  }
 }

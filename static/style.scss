@@ -36,7 +36,7 @@ $Dark_Gray: hsl(0, 0%, 59%);
     justify-content: center;
     flex-direction: column;
     gap:20px;
-    // border: 2px solid red;
+
 
 
         h1{
@@ -63,7 +63,6 @@ $Dark_Gray: hsl(0, 0%, 59%);
                 justify-content: center;
                 align-items: center;
                 background-color: $Very_Dark_Gray;
-                // border: 2px solid red;
                 border-radius: 0px 10px 10px 0px;
                 min-height: 50px;
                 width: 50px;
@@ -73,18 +72,27 @@ $Dark_Gray: hsl(0, 0%, 59%);
 
         .show_resultBox{
             position: absolute;
-            // border: 2px solid red;
+           
             width: 90%;
-            height: 200px;
+            height: auto;
+  
+            overflow: hidden;
             top: 140%;
-            background-color: white;
-            border-radius: 15px;
-            padding: 30px;
+           
+            border-radius: 35px;
             display: flex;
-            justify-content: space-between;
+      
             flex-direction: column;
+            z-index: 3;
+            .row{
+                background-color: white;   
+     
+                padding: 30px;
+                height: 100%;
+            }
 
             .col{
+                 
                 display: flex;
                 flex-direction: column; 
                 
@@ -112,7 +120,52 @@ $Dark_Gray: hsl(0, 0%, 59%);
     }
 }
 
+
 #map{
   height: calc(100vh - 300px);
-  z-index: -1;
+  z-index: 1;
+
+}
+
+@media(max-width:1200px){
+
+    .show_resultBox{
+
+        .col{
+           
+
+        p{  
+            
+            &:first-child{
+                
+                font-size: 0.6rem !important;
+            }
+            &:last-child{
+                
+                font-size: 1rem !important;
+                
+            }
+        }
+    }
+
+    }
+
+
+}
+
+@media(max-width:767px){
+
+
+    .show_resultBox{
+        flex-direction: row !important;
+
+        .col{
+            border: none !important;
+        }
+    }
+    .inputGroup{
+        input{
+            width: 305px !important;
+        }
+    }
 }
