@@ -39,7 +39,7 @@ const leafMapHandler = async (pos) => {
     }
 
     marker = L.marker([lat, lng], {icon: myIcon}).addTo(map);
-    // map.fitBounds(marker.getBounds());
+
     map.setView([lat, lng], 13)
 
 }
@@ -63,7 +63,7 @@ const showMap = async (ip_address) => {
     timezone.innerHTML = ipInfo.location.timezone;
     isp.innerHTML = ipInfo.isp
     leafMapHandler({ 'lat': lat, 'lng': lng })
-    // searchBtnHandler(map)
+
     
 
 }
@@ -85,17 +85,7 @@ const searchBtnHandler = async () => {
     })
 }
 
-// const showFirstTimeMap = async () =>{
-//     const latLong = await showMap();
-//     console.log(latLong)
-//     leafMapHandler(latLong.lat,latLong.lon);
-// }
 
-// showFirstTimeMap()
-// searchBtnHandler();
-
-
-// leafMapHandler(34.04915,-118.09462);
 
 showMap()
 searchBtnHandler()
